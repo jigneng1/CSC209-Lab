@@ -1,6 +1,6 @@
 public class quicksort {
     public static void main(String[] args) {
-        int[] data = {69,200,44,1000,3,256,400,500,24,55,8,10,222,111,123,1};
+        int[] data = {69,200,44,1000,3,256,400,500};
 
         printAll(data);
 
@@ -14,10 +14,10 @@ public class quicksort {
         }
         int pivot = first ,lower=first+1,upper = last;
         while(lower <= upper){
-            while(a[lower]<a[pivot] && lower<=last){//search for bigger than pivot
+            while(lower <= last && a[lower] < a[pivot]){//search for bigger than pivot
                 lower++;
             }
-            while(a[upper]>a[pivot] && upper >= first){ // search for smaller than pivot
+            while(upper > first && a[upper] > a[pivot]){ // search for smaller than pivot
                 upper--;
             }
             if(lower < upper) { // lower has not pass upper then swap
